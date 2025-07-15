@@ -3,14 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --main-text: #52525B;
+  --gray-text: #52525B;
+  --button-bg: #014B56;
+  --button-text: #ffffff;
+  --card-gradient-green: linear-gradient(143deg, #1D4A55 0%, #2C7181 100%);
+  --card-gradient-blue: linear-gradient(143deg, #2A3050 0%, #46549A 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -21,22 +21,22 @@
 
 @font-face {
   font-family: 'ACTAY';
-  src: url('/fonts/ACTAY-REGULAR.OTF') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+  src: url('../fonts/ACTAY-REGULAR.OTF') format('opentype');
 }
 
 @font-face {
-  font-family: 'ACTAY';
-  src: url('fonts/ACTAYWIDE-BOLD.OTF') format('opentype');
-  font-weight: bold;
-  font-style: normal;
+  font-family: 'ACTAYWIDE';
+  src: url('../fonts/ACTAY-BOLD.OTF') format('opentype');
 }
 
 body {
   font-family: 'ACTAY';
-  font-weight: bold;
+  font-weight: normal;
   background: var(--background);
   color: var(--foreground);
   margin: 64px 128px;
+}
+
+body::-webkit-scrollbar {
+  width: 0;               /* ширина scrollbar */
 }
