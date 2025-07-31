@@ -3,13 +3,47 @@
 import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 import { InvestCard, RayonCard, TurizmCard, HeaderTitle, StaticLabel, AnimatedText, InfoButton, RuButton } from './components';
+import { motion } from 'framer-motion';
 
 export default function Page() {
-  const texts = ['инвесторов', 'бизнеса', 'новых идей', 'устойчивого развития', 'туризма', 'комфортной жизини','прогресса', 'надёжного будущего',];
+  // Массив текстов для анимированного блока (меняются по очереди)
+  const texts = [
+    'инвесторов',
+    'бизнеса',
+    'новых идей',
+    'устойчивого развития',
+    'туризма',
+    'комфортной жизини',
+    'прогресса',
+    'надёжного будущего',
+  ];
+
+  // Индекс карточки, на которой сейчас shine-анимация
+  const [shineIndex, setShineIndex] = React.useState(0);
+  const [shineActive, setShineActive] = React.useState(false);
+  const SHINE_INTERVAL_MS = 5000;
+  const SHINE_DURATION_MS = 1500;
+
+  // Меняем shineIndex с нужной частотой
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setShineIndex((prev) => (prev + 1) % 3);
+    }, SHINE_INTERVAL_MS);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Включаем shineActive на короткое время при каждом изменении shineIndex
+  React.useEffect(() => {
+    setShineActive(true);
+    const timeout = setTimeout(() => setShineActive(false), SHINE_DURATION_MS);
+    return () => clearTimeout(timeout);
+  }, [shineIndex]);
 
   return (
     <>
+      {/* Шапка сайта: содержит основной заголовок, статичный и анимированный текст, а также информацию о районе и логотип */}
       <header style={{ width: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
           {/* Левый блок — основной */}
@@ -30,6 +64,7 @@ export default function Page() {
           </div>
         </div>
       </header>
+
       {/* Секция карточек: три тематические карточки с разными иконками, цветами и переходами */}
       <section
         style={{
@@ -41,13 +76,16 @@ export default function Page() {
           justifyContent: 'center',
         }}
       >
-        {/* Карточка "Инвест-Атлас" (зелёная) */}
-        <InvestCard />
-        {/* Карточка "Наш район" (синяя) */}
-        <RayonCard />
-        {/* Карточка "Туризм Сор-Кут" (зелёная) */}
-        <TurizmCard />
-        {/* Можно добавить дополнительные карточки по аналогии */}
+        {/* shine=true только для одной карточки за раз, но теперь каждая карточка обёрнута в ссылку */}
+        <Link href="/invest" style={{ textDecoration: 'none' }}>
+          <InvestCard shine={shineActive && shineIndex === 0} />
+        </Link>
+        <Link href="/rayon" style={{ textDecoration: 'none' }}>
+          <RayonCard shine={shineActive && shineIndex === 2} />
+        </Link>
+        <Link href="/turizm" style={{ textDecoration: 'none' }}>
+          <TurizmCard shine={shineActive && shineIndex === 1} />
+        </Link>
       </section>
 
       {/* Фиксированные кнопки Info и RU в правом нижнем углу */}
@@ -62,8 +100,6 @@ export default function Page() {
           zIndex: 1000,
         }}
       >
-        <InfoButton />
-        <RuButton />
       </div>
     </>
   );
