@@ -1,6 +1,7 @@
 'use client'
 
 import { HeaderTitle, StaticLabel, AnimatedText, InfoButton, RuButton, HomeButton, TurizmCard, GlavaCard, GlavaContainer } from '../components';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const texts = [
@@ -33,11 +34,11 @@ export default function RayonPage() {
               <span>Сургутский муниципальный район</span>
               <span>Ханты-Мансийского автономного округа - Югры</span>
             </div>
-            <img src="/Логотип.svg" width={34} height={34} alt="Логотип" style={{ marginLeft: 8 }} />
+            <Image src="/Логотип.svg" width={34} height={34} alt="Логотип" style={{ marginLeft: 8 }} />
           </div>
         </div>
       </header>
-      <div style={{ display: 'flex', justifyContent: 'start', marginTop: 64, gap: 24 }}>
+      <div style={{ display: 'flex', justifyContent: 'start', marginTop: 52, gap: 24 }}>
         <GlavaCard />
         <GlavaContainer />
       </div>

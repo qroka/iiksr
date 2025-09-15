@@ -7,7 +7,9 @@ interface Props {
   population: number;
   area: number;
   distance_to_khanty: number;
+  workers: number;
   distance_to_moscow: number;
+  investments: number;
   onBack: () => void;
   onLearnMore?: () => void; // обработчик для кнопки "УЗНАТЬ ПОДРОБНЕЕ"
   dataReady?: boolean; // готовы ли данные для отображения
@@ -20,8 +22,9 @@ export default function SettlementCard({
   population,
   area,
   distance_to_khanty,
-  distance_to_moscow,
+  investments,
   onLearnMore,
+  workers,
   dataReady = true,
 }: Props) {
   return (
@@ -42,7 +45,7 @@ export default function SettlementCard({
       />
       <div style={{ 
         fontSize: 36, 
-        color: 'var(--button-bg)', 
+        color: 'var(--fond-night)', 
         marginBottom: 12,
       }}>
         {dataReady ? name : ''}
@@ -52,35 +55,42 @@ export default function SettlementCard({
         marginBottom: 12,
         fontSize: 24,
       }}>
-        Дата основания: <a style={{ color: 'var(--button-bg)', fontSize: 32 }}>{dataReady ? foundation_date : ''}</a>
+        Дата основания: <a style={{ color: 'var(--fond-night)', fontSize: 32 }}>{dataReady ? foundation_date : ''}</a>
       </div>
       <div style={{ 
         color: 'var(--gray-text)', 
         marginBottom: 12,
         fontSize: 24,
       }}>
-        Население: <a style={{ color: 'var(--button-bg)', fontSize: 32 }}>{dataReady ? population.toLocaleString('ru-RU') : ''} тыс. чел.</a>
+        Население: <a style={{ color: 'var(--fond-night)', fontSize: 32 }}>{dataReady ? population.toLocaleString('ru-RU') : ''} тыс. чел.</a>
       </div>
       <div style={{ 
         color: 'var(--gray-text)', 
         marginBottom: 12,
         fontSize: 24,
       }}>
-        Площадь: <a style={{ color: 'var(--button-bg)', fontSize: 32 }}>{dataReady ? area : ''} км²</a>
+        Площадь: <a style={{ color: 'var(--fond-night)', fontSize: 32 }}>{dataReady ? area : ''} км²</a>
       </div>
       <div style={{ 
         color: 'var(--gray-text)', 
         marginBottom: 12,
         fontSize: 24,
       }}>
-        До Ханты-Мансийска: <a style={{ color: 'var(--button-bg)', fontSize: 32 }}>{dataReady ? distance_to_khanty : ''} км</a>
+        До Ханты-Мансийска: <a style={{ color: 'var(--fond-night)', fontSize: 32 }}>{dataReady ? distance_to_khanty : ''} км</a>
+      </div>
+      <div style={{ 
+        color: 'var(--gray-text)', 
+        marginBottom: 12,
+        fontSize: 24,
+      }}>
+        Занятого населения: <a style={{ color: 'var(--fond-night)', fontSize: 32 }}>{dataReady ? workers : ''} %</a>
       </div>
       <div style={{ 
         color: 'var(--gray-text)', 
         marginBottom: 20,
         fontSize: 24,
       }}>
-        До Москвы: <a style={{ color: 'var(--button-bg)', fontSize: 32 }}>{dataReady ? distance_to_moscow : ''} км</a>
+        Инвест. площдаки: <a style={{ color: 'var(--fond-night)', fontSize: 32 }}>{dataReady ? investments : ''} шт.</a>
       </div>
       <button 
         onClick={onLearnMore}
@@ -95,12 +105,6 @@ export default function SettlementCard({
           fontSize: 22,
           cursor: 'pointer',
           transition: 'background-color 0.2s'
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = '#b91c1c';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--red)';
         }}
       >
         УЗНАТЬ ПОДРОБНЕЕ

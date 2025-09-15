@@ -42,7 +42,7 @@ export default function Page() {
   }, [shineIndex]);
 
   return (
-    <>
+    <div suppressHydrationWarning={true}>
       {/* Шапка сайта: содержит основной заголовок, статичный и анимированный текст, а также информацию о районе и логотип */}
       <header style={{ width: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
@@ -60,7 +60,7 @@ export default function Page() {
               <span>Сургутский муниципальный район</span>
               <span>Ханты-Мансийского автономного округа - Югры</span>
             </div>
-            <img src="/Логотип.svg" width={34} height={34} alt="Логотип" style={{ marginLeft: 8 }} />
+            <Image src="/Логотип.svg" width={34} height={34} alt="Логотип" style={{ marginLeft: 8 }} />
           </div>
         </div>
       </header>
@@ -68,7 +68,7 @@ export default function Page() {
       {/* Секция карточек: три тематические карточки с разными иконками, цветами и переходами */}
       <section
         style={{
-          marginTop: 64,
+          marginTop: 52,
           width: '100%',
           display: 'flex',
           flexDirection: 'row',
@@ -101,6 +101,6 @@ export default function Page() {
         }}
       >
       </div>
-    </>
+    </div>
   );
 }

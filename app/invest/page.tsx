@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { BackButton } from '../components';
 import { getSettlementByIndex } from '../utils/settlements';
 import SettlementCard from './SettlementCard';
+import SvgMarker from '../utils/SvgMarker';
 
 // CSS для анимации загрузки
 const loadingStyles = `
@@ -73,7 +74,7 @@ function getActiveIndex(rotation: number, count: number) {
   return minIdx;
 }
 
-// Координаты городов на PNG-карте 
+// Координаты городов на PNG-карте
 const cityCoords: Record<string, { x: number; y: number }> = {
   "Лянтор": { x: 3180.035, y: 3576.92 },
   "Белый Яр": { x: 4150.915, y: 4296.505 },
@@ -320,7 +321,7 @@ export default function PoseleniyaCircle() {
   return (
     <>
       {/* Кнопка НАЗАД */}
-      <BackButton position="fixed" />
+      <BackButton position="fixed" color="var(--fond-night)" />
 
 
       {/* --- КАРТА С ГОРОДАМИ --- */}
@@ -331,10 +332,10 @@ export default function PoseleniyaCircle() {
           height: '100vh',
           overflow: 'hidden',
           position: 'relative',
-          background: '#03515c',
+          background: "var(--fond-night)",
           zIndex: 0,
         }}
-        className="map-container"
+        className="map-container invest-page"
       >
         <div
           style={{
@@ -349,7 +350,7 @@ export default function PoseleniyaCircle() {
 
         <img
           ref={mapImageRef}
-          src="/map_sr.svg"
+          src="/map-invest.svg"
           width={MAP_WIDTH}
           height={MAP_HEIGHT}
           style={{ display: 'block', pointerEvents: 'none', userSelect: 'none', maxWidth: 'none' }}
@@ -387,26 +388,23 @@ export default function PoseleniyaCircle() {
             willChange: 'opacity', // Оптимизация для GPU
           };
           return (
-            <img
+            <SvgMarker
               key={name}
               src={`/${name}.svg`}
-              alt={name}
+              width={size.w}
+              height={size.h}
+              color={'var(--fond-night-light)'}
+              title={name}
+              className="fade-marker"
               style={{
                 position: 'absolute',
                 left: coord.x - size.w / 2,
                 top: coord.y - size.h / 2,
-                width: size.w,
-                height: size.h,
                 zIndex: 2,
-                cursor: 'pointer',
                 pointerEvents: 'none',
                 transform: 'translateZ(0)', // Аппаратное ускорение
                 ...fadeStyle,
               }}
-              className="fade-marker"
-              title={name}
-              loading="lazy"
-              decoding="async"
             />
           );
         })}
@@ -473,8 +471,8 @@ export default function PoseleniyaCircle() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background: isActive ? "var(--white)" : "var(--button-bg-dark)",
-                color: isActive ? "var(--button-bg)" : "var(--white)",
+                background: isActive ? "var(--white)" : "var(--fond-night-dark)",
+                color: isActive ? "var(--fond-night)" : "var(--white)",
                 borderRadius: 9999,
                 fontSize: 64,
                 padding: "12px 32px",
@@ -499,14 +497,6 @@ export default function PoseleniyaCircle() {
           width: 0px;
           height: 0px;
         }
-        .fade-marker {
-          opacity: 0;
-          transition: opacity 1s cubic-bezier(0.4,0,0.2,1);
-        }
-        .fade-marker[style*="opacity: 1"] {
-          opacity: 1;
-        }
-        
         /* Оптимизация для плавной анимации */
         * {
           -webkit-font-smoothing: antialiased;
@@ -525,12 +515,6 @@ export default function PoseleniyaCircle() {
           will-change: transform;
           transform: translateZ(0);
           backface-visibility: hidden;
-        }
-        
-        /* Оптимизация для маркеров */
-        .fade-marker {
-          backface-visibility: hidden;
-          perspective: 1000px;
         }
       `}</style>
 
@@ -553,6 +537,8 @@ export default function PoseleniyaCircle() {
             area={getSettlementByIndex(activeIdx)?.area || 0}
             distance_to_khanty={getSettlementByIndex(activeIdx)?.distance_to_khanty || 0}
             distance_to_moscow={getSettlementByIndex(activeIdx)?.distance_to_moscow || 0}
+            investments={getSettlementByIndex(activeIdx)?.investments|| 0}
+            workers={getSettlementByIndex(activeIdx)?.workers|| 0}
             onBack={() => setShowCard(false)}
             onLearnMore={handleLearnMore}
           />

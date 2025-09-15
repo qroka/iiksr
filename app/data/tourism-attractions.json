@@ -1,0 +1,290 @@
+{
+  "attractions": [
+    {
+      "id": 1,
+      "city": "Лянтор",
+      "category": "Храмы",
+      "name": "Храм Покрова Божией Матери",
+      "description": "Деревянная православная церковь, построенная в традиционном русском стиле. Главный храм города Лянтор.",
+      "photos": [
+        "/lyantor/church.jpg",
+        "/lyantor/church-interior.jpg",
+        "/lyantor/church-night.jpg"
+      ],
+      "mainPhoto": "/lyantor/church.jpg",
+      "address": "ул. Ленина, 15, Лянтор",
+      "phone": "+7 (34638) 2-34-56",
+      "email": "church.lyantor@mail.ru",
+      "website": "http://lyantor-church.ru",
+      "workingHours": "Ежедневно 8:00-20:00",
+      "coordinates": {
+        "lat": 61.6194,
+        "lng": 72.1644
+      }
+    },
+    {
+      "id": 2,
+      "city": "Лянтор",
+      "category": "Музеи",
+      "name": "Музей истории нефтяной промышленности",
+      "description": "Музей посвящен истории развития нефтяной промышленности в регионе и становлению города Лянтор.",
+      "photos": [
+        "/lyantor/museum-oil.jpg",
+        "/lyantor/museum-exhibit.jpg",
+        "/lyantor/museum-building.jpg"
+      ],
+      "mainPhoto": "/lyantor/city-center.jpg",
+      "address": "ул. Нефтяников, 8, Лянтор",
+      "phone": "+7 (34638) 3-45-67",
+      "email": "museum.lyantor@mail.ru",
+      "website": "http://lyantor-museum.ru",
+      "workingHours": "Вт-Вс 10:00-18:00, Пн - выходной",
+      "coordinates": {
+        "lat": 61.6201,
+        "lng": 72.1651
+      }
+    },
+    {
+      "id": 3,
+      "city": "Лянтор",
+      "category": "Музеи",
+      "name": "Краеведческий музей Лянтора",
+      "description": "Музей истории и культуры города, экспозиции о коренных народах и природе региона.",
+      "photos": [
+        "/lyantor/museum-local.jpg",
+        "/lyantor/museum-culture.jpg",
+        "/lyantor/museum-nature.jpg"
+      ],
+      "mainPhoto": "/lyantor/city-center.jpg",
+      "address": "ул. Центральная, 12, Лянтор",
+      "phone": "+7 (34638) 4-56-78",
+      "email": "kraeved.lyantor@mail.ru",
+      "website": "http://lyantor-kraeved.ru",
+      "workingHours": "Вт-Вс 9:00-17:00, Пн - выходной",
+      "coordinates": {
+        "lat": 61.6189,
+        "lng": 72.1638
+      }
+    },
+    {
+      "id": 4,
+      "city": "Лянтор",
+      "category": "Музеи",
+      "name": "Музей военной истории",
+      "description": "Музей памяти героев Великой Отечественной войны и военной истории региона.",
+      "photos": [
+        "/lyantor/museum-war.jpg",
+        "/lyantor/museum-memorial.jpg",
+        "/lyantor/museum-veterans.jpg"
+      ],
+      "mainPhoto": "/lyantor/city-center.jpg",
+      "address": "ул. Победы, 25, Лянтор",
+      "phone": "+7 (34638) 5-67-89",
+      "email": "war-museum.lyantor@mail.ru",
+      "website": "http://lyantor-war-museum.ru",
+      "workingHours": "Вт-Вс 10:00-18:00, Пн - выходной",
+      "coordinates": {
+        "lat": 61.6212,
+        "lng": 72.1662
+      }
+    },
+    {
+      "id": 5,
+      "city": "Лянтор",
+      "category": "Музеи",
+      "name": "Выставочный центр современного искусства",
+      "description": "Центр современного искусства с регулярными выставками местных и приезжих художников.",
+      "photos": [
+        "/lyantor/art-center.jpg",
+        "/lyantor/art-exhibition.jpg",
+        "/lyantor/art-workshop.jpg"
+      ],
+      "mainPhoto": "/lyantor/city-center.jpg",
+      "address": "ул. Искусств, 7, Лянтор",
+      "phone": "+7 (34638) 6-78-90",
+      "email": "art-center.lyantor@mail.ru",
+      "website": "http://lyantor-art.ru",
+      "workingHours": "Ежедневно 11:00-19:00",
+      "coordinates": {
+        "lat": 61.6198,
+        "lng": 72.1648
+      }
+    },
+    {
+      "id": 6,
+      "city": "Лянтор",
+      "category": "Гостиницы",
+      "name": "Гостиница 'Лянтор'",
+      "description": "Основная гостиница города с современными номерами и рестораном.",
+      "photos": [
+        "/lyantor/hotel-lyantor.jpg",
+        "/lyantor/hotel-room.jpg",
+        "/lyantor/hotel-restaurant.jpg"
+      ],
+      "mainPhoto": "/lyantor/park.jpg",
+      "address": "ул. Гостиничная, 1, Лянтор",
+      "phone": "+7 (34638) 7-89-01",
+      "email": "hotel.lyantor@mail.ru",
+      "website": "http://lyantor-hotel.ru",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6205,
+        "lng": 72.1655
+      }
+    },
+    {
+      "id": 7,
+      "city": "Лянтор",
+      "category": "Гостиницы",
+      "name": "Мотель 'Северный'",
+      "description": "Уютный мотель для путешественников с автостоянкой и кафе.",
+      "photos": [
+        "/lyantor/motel-north.jpg",
+        "/lyantor/motel-cafe.jpg",
+        "/lyantor/motel-parking.jpg"
+      ],
+      "mainPhoto": "/lyantor/park.jpg",
+      "address": "ул. Северная, 45, Лянтор",
+      "phone": "+7 (34638) 8-90-12",
+      "email": "motel-north.lyantor@mail.ru",
+      "website": "http://motel-north.ru",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6220,
+        "lng": 72.1670
+      }
+    },
+    {
+      "id": 8,
+      "city": "Лянтор",
+      "category": "Памятники",
+      "name": "Мемориал нефтяникам",
+      "description": "Памятник в честь первооткрывателей Лянторского месторождения нефти.",
+      "photos": [
+        "/lyantor/monument-oil.jpg",
+        "/lyantor/monument-oil-detail.jpg",
+        "/lyantor/monument-oil-night.jpg"
+      ],
+      "mainPhoto": "/lyantor/oil-field.jpg",
+      "address": "пл. Нефтяников, Лянтор",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6190,
+        "lng": 72.1640
+      }
+    },
+    {
+      "id": 9,
+      "city": "Лянтор",
+      "category": "Памятники",
+      "name": "Памятник воинам-землякам",
+      "description": "Мемориал в честь жителей Лянтора, погибших в годы Великой Отечественной войны.",
+      "photos": [
+        "/lyantor/monument-war.jpg",
+        "/lyantor/monument-war-eternal.jpg",
+        "/lyantor/monument-war-ceremony.jpg"
+      ],
+      "mainPhoto": "/lyantor/oil-field.jpg",
+      "address": "ул. Победы, Лянтор",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6200,
+        "lng": 72.1650
+      }
+    },
+    {
+      "id": 10,
+      "city": "Лянтор",
+      "category": "Памятники",
+      "name": "Скульптура 'Нефтяник'",
+      "description": "Символическая скульптура нефтяника - символ города и нефтяной промышленности.",
+      "photos": [
+        "/lyantor/sculpture-oilman.jpg",
+        "/lyantor/sculpture-oilman-close.jpg",
+        "/lyantor/sculpture-oilman-square.jpg"
+      ],
+      "mainPhoto": "/lyantor/oil-field.jpg",
+      "address": "пл. Центральная, Лянтор",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6195,
+        "lng": 72.1645
+      }
+    },
+    {
+      "id": 11,
+      "city": "Лянтор",
+      "category": "Памятники",
+      "name": "Памятник В.И. Ленину",
+      "description": "Традиционный памятник основателю Советского государства.",
+      "photos": [
+        "/lyantor/monument-lenin.jpg",
+        "/lyantor/monument-lenin-square.jpg",
+        "/lyantor/monument-lenin-close.jpg"
+      ],
+      "mainPhoto": "/lyantor/oil-field.jpg",
+      "address": "пл. Ленина, Лянтор",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6185,
+        "lng": 72.1635
+      }
+    },
+    {
+      "id": 12,
+      "city": "Лянтор",
+      "category": "Памятники",
+      "name": "Мемориальная доска первопроходцам",
+      "description": "Мемориальная доска в честь первых геологов и нефтяников, открывших месторождение.",
+      "photos": [
+        "/lyantor/memorial-plaque.jpg",
+        "/lyantor/memorial-plaque-detail.jpg",
+        "/lyantor/memorial-plaque-building.jpg"
+      ],
+      "mainPhoto": "/lyantor/oil-field.jpg",
+      "address": "ул. Геологов, 3, Лянтор",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6215,
+        "lng": 72.1665
+      }
+    },
+    {
+      "id": 13,
+      "city": "Лянтор",
+      "category": "Памятники",
+      "name": "Памятник погибшим в локальных конфликтах",
+      "description": "Мемориал в память о жителях Лянтора, погибших в локальных военных конфликтах.",
+      "photos": [
+        "/lyantor/monument-conflicts.jpg",
+        "/lyantor/monument-conflicts-eternal.jpg",
+        "/lyantor/monument-conflicts-ceremony.jpg"
+      ],
+      "mainPhoto": "/lyantor/oil-field.jpg",
+      "address": "ул. Памяти, Лянтор",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "workingHours": "Круглосуточно",
+      "coordinates": {
+        "lat": 61.6208,
+        "lng": 72.1658
+      }
+    }
+  ]
+} 

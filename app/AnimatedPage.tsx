@@ -45,8 +45,8 @@ const poseleniyaVariants = {
 
 export default function AnimatedPage({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const isPoseleniya = pathname.startsWith('/poseleniya');
-  const usedVariants = isPoseleniya ? poseleniyaVariants : variants;
+  const isPoseleniyaOrInvest = pathname.startsWith('/poseleniya') || pathname.startsWith('/invest');
+  const usedVariants = isPoseleniyaOrInvest ? poseleniyaVariants : variants;
   return (
     <motion.div
       key={pathname}
@@ -54,7 +54,6 @@ export default function AnimatedPage({ children }: { children: ReactNode }) {
       initial="initial"
       animate="animate"
       exit="exit"
-      style={{ height: '100%' }}
     >
       {children}
     </motion.div>

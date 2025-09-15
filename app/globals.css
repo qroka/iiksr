@@ -4,17 +4,23 @@
   --background: #ffffff;
   --foreground: #171717;
   --main-text: #52525B;
-  --gray-text: #52525B;
+  --gray-text: #757575;
   --button-bg: #014B56;
-  --button-text: #ffffff;
+  --fond-night: #2A3050;
+  --fond-night-light: #ACB5E5;
+  --fond-night-dark: #1A1F3C;
+  --button-bg-dark: #01353D;
+  --button-text: #ffffff; 
+  --white: #ffffff;
   --card-gradient-green: linear-gradient(143deg, #1D4A55 0%, #2C7181 100%);
   --card-gradient-blue: linear-gradient(143deg, #2A3050 0%, #46549A 100%);
+  --red: #B8231E;
 }
 
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background:#ededed;
+    --background:#F6F6F6;
     --foreground:#0a0a0a;
   }
 }
@@ -29,6 +35,10 @@
   src: url('../fonts/ACTAY-BOLD.OTF') format('opentype');
 }
 
+html, body {
+  overflow: hidden;
+}
+
 body {
   font-family: 'ACTAY';
   font-weight: normal;
@@ -39,4 +49,35 @@ body {
 
 body::-webkit-scrollbar {
   width: 0;               /* ширина scrollbar */
+}
+
+/* Стили для всех маркеров - ТОЛЬКО на странице инвестиций */
+.invest-page .fade-marker {
+  /* Используем CSS свойство fill для изменения цвета */
+  fill: #ACB5E5;
+  /* Также применяем цвет к неактивным маркерам */
+  opacity: 0;
+}
+
+/* Стили для активного маркера - ТОЛЬКО на странице инвестиций */
+.invest-page .fade-marker[style*="opacity: 1"] {
+  /* Используем CSS свойство fill для изменения цвета */
+  fill: #ACB5E5;
+}
+
+/* Hover эффект для маркеров - ТОЛЬКО на странице инвестиций */
+.invest-page .fade-marker:hover {
+  fill: #8B9CD8; /* Немного темнее для hover эффекта */
+  transition: fill 0.3s ease;
+}
+
+/* Базовые стили для fade-marker */
+.fade-marker {
+  transition: opacity 1s cubic-bezier(0.4,0,0.2,1);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.fade-marker[style*="opacity: 1"] {
+  opacity: 1;
 }

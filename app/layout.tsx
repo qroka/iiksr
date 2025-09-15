@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import './globals.css'
 import { ReactNode } from 'react'
 import AnimatedPage from './AnimatedPage'
 import FixedButtons from './FixedButtons';
-import { motion } from 'framer-motion';
-
-import Head from 'next/head';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ru">
-      <body>
+      <body suppressHydrationWarning={true}>
         <AnimatedPage>
           {children}
         </AnimatedPage>

@@ -64,6 +64,7 @@ export function Card({
 
   return (
     <div
+      suppressHydrationWarning={true}
       // Основной контейнер карточки с градиентом, скруглением и декоративным clip-path
       style={{
         position: 'relative',
@@ -153,8 +154,7 @@ export function Card({
           <div style={{
             color: '#fff',
             fontFamily: 'ACTAYWIDE',
-            fontWeight: 700,
-            fontSize: '80px',
+            fontSize: '78px',
             lineHeight: '1',
             textAlign: 'left',
             height: '142px',
@@ -175,11 +175,11 @@ export function Card({
   );
 }
 
-// Карточка "Инвест-Атлас" с предустановленными параметрами (зелёная)
+// Карточка "Бизнес в районе" с предустановленными параметрами (зелёная)
 export function InvestCard(props: { shine?: boolean; shineDuration?: number }) {
   return (
     <Card
-      title={<>ИНВЕСТ-<br />АТЛАС</>}
+      title={<>БИЗНЕС<br />В РАЙОНЕ</>}
       iconSrc="/business_center.svg"
       iconAlt="Иконка"
       iconSize={100}
@@ -213,11 +213,11 @@ export function RayonCard(props: { shine?: boolean; shineDuration?: number }) {
   );
 }
 
-// Карточка "Туризм Сор-Кут" с предустановленными параметрами (зелёная)
+// Карточка "Туризм в районе" с предустановленными параметрами (зелёная)
 export function TurizmCard(props: { shine?: boolean; shineDuration?: number }) {
   return (
     <Card
-      title={<>ТУРИЗМ<br />СОР-КУТ</>}
+      title={<>ТУРИЗМ<br />В РАЙОНЕ</>}
       iconSrc="/map.svg"
       iconAlt="Туризм"
       iconSize={100}
@@ -302,7 +302,6 @@ export function GlavaCard() {
       <div style={{
         color: '#fff',
         fontFamily: 'ACTAYWIDE',
-        fontWeight: 700,
         fontSize: '80px',
         lineHeight: '1',
         textAlign: 'left',
@@ -328,7 +327,6 @@ export function HeaderTitle() {
         fontFamily: 'ACTAYWIDE',
         fontSize: '72px',
         color: 'var(--main-text)',
-        fontWeight: 700,
         lineHeight: 1.1,
       }}
     >
@@ -344,8 +342,7 @@ export function StaticLabel() {
       style={{
         fontFamily: 'ACTAYWIDE',
         fontSize: '72px',
-        color: 'var(--gray-text)',
-        fontWeight: 700,
+        color: 'var(--main-text)',
         lineHeight: 1.1,
       }}
     >
@@ -390,6 +387,7 @@ export function AnimatedText({ texts }: { texts: string[] }) {
   return (
     <div
       ref={containerRef}
+      suppressHydrationWarning={true}
       style={{
         height: boxHeight,
         display: 'inline-flex',
@@ -536,6 +534,50 @@ export function HomeButton({ whiteBg = false }: { whiteBg?: boolean }) {
   );
 }
 
+// Кнопка "НАЗАД" для возврата на предыдущую страницу
+export function BackButton({ 
+  width = 257, 
+  height = 139, 
+  fontSize = 32,
+  position = 'static',
+  color = 'var(--button-bg)'
+}: { 
+  width?: number; 
+  height?: number; 
+  fontSize?: number;
+  position?: 'static' | 'fixed';
+  color?: string;
+}) {
+  const buttonStyle: React.CSSProperties = {
+    width,
+    height,
+    background: 'var(--white)',
+    color: color,
+    border: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'ACTAYWIDE',
+    fontSize,
+    cursor: 'pointer',
+    ...(position === 'fixed' && {
+      position: 'fixed',
+      right: 128,
+      bottom: 64,
+      zIndex: 1001,
+    }),
+  };
+
+  return (
+    <button
+      onClick={() => window.history.back()}
+      style={buttonStyle}
+    >
+      НАЗАД
+    </button>
+  );
+}
+
 // Контейнер с текстом и группой кнопок
 export function GlavaContainer() {
   // Для shine на кнопке "ПОСЕЛЕНИЯ"
@@ -579,7 +621,6 @@ export function GlavaContainer() {
           style={{
             color: 'var(--button-bg)',
             fontFamily: 'ACTAYWIDE',
-            fontWeight: 700,
             fontSize: 64,
             lineHeight: '96%',
             zIndex: 2,
@@ -700,24 +741,7 @@ export function GlavaContainer() {
         </Link>
 
         {/* Кнопка "НАЗАД" */}
-        <Link
-          href="/"
-          style={{
-            width: 257,
-            height: 139,
-            background: '#fff',
-            color: 'var(--button-bg)',
-            border: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontFamily: 'ACTAYWIDE',
-            fontSize: 32,
-            cursor: 'pointer',
-          }}
-        >
-          НАЗАД
-        </Link>
+        <BackButton />
       </div>
     </div>
   );
